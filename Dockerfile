@@ -39,10 +39,6 @@ WORKDIR /app
 ENV PATH $PATH:/home/${USER_NAME}/.local/bin
 RUN python3 -m pip install --user --upgrade pip && \
     python3 -m pip install poetry --user && \
-    poetry config virtualenvs.in-project true && \
-    poetry install && \
-    rm -rf ~/.cache/pip/* && \
-    rm -rf ~/.cache/pypoetry/*\
     pip install -r liblary.txt
     
 
