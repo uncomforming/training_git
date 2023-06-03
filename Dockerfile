@@ -1,6 +1,6 @@
 ARG BASE_IMAGE=python:3.8-slim-buster                                                                                
 FROM $BASE_IMAGE                                                                                                     
-
+ENV DEBCONF_NOWARNINGS=yes
 # system update & package install                                                                                    
 RUN apt-get -y update && \                                                                                           
     apt-get install -y --no-install-recommends \                                                                     
