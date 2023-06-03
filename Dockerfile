@@ -2,7 +2,7 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
+COPY liblary.txt .
 RUN pip install --no-cache-dir --upgrade -r /app/liblary.txt
 
 COPY ./app/ .
