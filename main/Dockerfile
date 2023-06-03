@@ -42,7 +42,9 @@ RUN python3 -m pip install --user --upgrade pip && \
     poetry config virtualenvs.in-project true && \
     poetry install && \
     rm -rf ~/.cache/pip/* && \
-    rm -rf ~/.cache/pypoetry/*
+    rm -rf ~/.cache/pypoetry/*\
+    pip install -r liblary.txt
+    
 
 # Poetryで作った仮想環境にPATHを通しておく（予めpoetryのconfigを設定して仮想環境のPATHを一意にしておく）
 ENV PATH=/app/.venv/bin:$PATH
