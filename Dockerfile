@@ -16,7 +16,7 @@ RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
 # 一般ユーザーアカウントを追加
-ARG USER_NAME=app
+ARG USER_NAME=main
 ARG USER_UID=1000
 ARG PASSWD=password
 
@@ -39,6 +39,10 @@ WORKDIR /app
 ENV PATH $PATH:/home/${USER_NAME}/.local/bin
 RUN python3 -m pip install --user --upgrade pip && \
     python3 -m pip install poetry --user && \
+    poetry config virtualenvs.in-project true && \
+    poetry install && \
+    rm -rf ~/.cache/pip/* && \
+    rm -rf ~/.cache/pypoetry/*\
     pip install -r liblary.txt
     
 
