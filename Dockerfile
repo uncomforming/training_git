@@ -26,7 +26,7 @@ RUN useradd -m -s /bin/bash -u $USER_UID $USER_NAME && \
     echo "${USER_NAME} ALL=(ALL) ALL" >> /etc/sudoers
 
 # FastAPIのソースコードなどをコンテナ内へCOPY
-COPY ./app /app/app
+COPY ./main /app/app
 COPY ./pyproject.toml /app/pyproject.toml
 # local環境で使用しているpoetry.lockファイルがあればそれも追加する
 # COPY ./poetry.lock /app/poetry.lock
