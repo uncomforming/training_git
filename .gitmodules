@@ -1,0 +1,3 @@
+[submodule "himatubushi"]
+	path = himatubushi
+	url = https://github.com/uncomforming/himatubushi.git
